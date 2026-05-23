@@ -4,7 +4,7 @@ const UserModel = require("../models/user.model");
 const authmiddleware = async (req, res, next) => {
 
     try {
-git add .
+
         // GET TOKEN FROM COOKIE
 
         const token = req.cookies.token;

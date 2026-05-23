@@ -29,6 +29,9 @@ let userSchema = new mongoose.Schema
         minlength:10,
         maxlength:10
     },
+    refreshToken:{
+        type:String,
+    }
 
 },{
     timestamps : true,

@@ -2,7 +2,7 @@ const {default:mongoose} = require("mongoose")
 
 let connectDB = async ()=>{
     try {
-        await mongoose.connect("mongodb://0.0.0.0/kodex-auth")
+        await mongoose.connect("mongodb://0.0.0.0/ARTokens")
 
          console.log("mongodb connnected");
          
