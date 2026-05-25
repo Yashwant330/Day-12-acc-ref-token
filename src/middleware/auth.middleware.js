@@ -7,7 +7,7 @@ const authmiddleware = async (req, res, next) => {
 
         // GET TOKEN FROM COOKIE
 
-        const token = req.cookies.token;
+        const token = req.cookies.accessToken;
 
         if (!token) {
 
@@ -21,7 +21,7 @@ const authmiddleware = async (req, res, next) => {
 
         const decode = jwt.verify(
             token,
-            process.env.JWT_SECRET
+            process.env.JWT_SECRET_ACCESS
         );
 
 
@@ -35,7 +35,7 @@ const authmiddleware = async (req, res, next) => {
 
         // FIND USER
 
-        const user = await UserModel.findById(decode.id);
+        const user = await UserModel.findById(decode.userId);
 
         if (!user) {
 

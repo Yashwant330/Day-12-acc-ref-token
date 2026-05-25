@@ -1,8 +1,21 @@
-let express = require ('express')
+let express = require('express');
 
-let router = express.Router()
+const {
+    registerController,
+    loginController,
+    getRefreshTokenController
+} = require('../Controllers/auth.controller');
 
-router.post('/register')
-router.post('/login')
+console.log(registerController);
+console.log(loginController);
+console.log(getRefreshTokenController);
 
-module.exports = router
+let router = express.Router();
+
+router.get('/getRefreshToken', getRefreshTokenController);
+
+router.post('/register', registerController);
+
+router.post('/login', loginController);
+
+module.exports = router;
